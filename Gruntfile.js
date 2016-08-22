@@ -10,13 +10,13 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       options: {
-        jshintrc: '.jshintrc', 
+        jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
-      }, 
+      },
       all: {
         src: ['Gruntfile.js', 'app/scripts/{,*/}*.js']
       }
-    }, 
+    },
     copy: {
       dist: {
         cwd: 'app',
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
       options: {
         assetsDirs: ['dist', 'dist/styles']
       }
-    }, 
+    },
     watch: {
       copy: {
         files: [ 'app/**', '!app/**/*.css', '!app/**/*.js'],
@@ -150,14 +150,14 @@ module.exports = function(grunt) {
     'clean',
     'jshint',
     'useminPrepare',
-    'concat', 
+    'concat',
     'cssmin',
     'uglify',
     'copy',
     'filerev',
     'usemin'
   ]);
-
+  
   grunt.registerTask('serve', ['build', 'connect:dist', 'watch']);
   grunt.registerTask('default', ['build']);
 };
